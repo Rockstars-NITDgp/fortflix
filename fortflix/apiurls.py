@@ -18,22 +18,38 @@ from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 from . import views
 from . models import Movie
+from django.contrib.auth.decorators import login_required
+from rest_framework.decorators import action
+
 
 class MovieSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Movie
-        fields = ('name', 'genre')
+        fields = ('name', 'genre', 'release_date')
+
+
+class MovieDetailedSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Movie
+        fields = (each.name for each in Movie._meta.get_fields())
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
+
+@login_required
+class MovieDetailedViewSet(viewsets.ModelViewSet):
+        # movie_details = Movie.objects.get(name=moviename)
+        # serializer_class = MovieDetailedSerializer
+        def Moviedetails(self, request, moviename):
+            movie_details = Movie.objects.get(name=moviename)
+            serializer_class = MovieDetailedSerializer
+
 router = routers.DefaultRouter()
-router.register('movies', MovieViewSet)
+router.register('$', MovieViewSet)
+router.register('movie/{moviename}/$', MovieDetailedViewSet)
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
-#    path('', views.api_main),
-]
+
+urlpatterns += router.urls

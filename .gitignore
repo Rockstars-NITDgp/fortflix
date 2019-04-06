@@ -5,5 +5,5 @@
 __pycache__/
 
 venv/*
-
+fortflix/migrations/*
 db.sqlite3

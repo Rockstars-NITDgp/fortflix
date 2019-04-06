@@ -45,6 +45,7 @@ class Movie(models.Model):
     language = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
     rating = models.DecimalField(max_digits=5,decimal_places=0)
+    rating = models.FloatField()
     movie_cost = models.IntegerField()
     rewards = models.IntegerField()
     name = models.CharField(max_length=100)
