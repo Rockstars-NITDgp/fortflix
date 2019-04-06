@@ -14,14 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from fortflix import views
 from django.views.generic.base import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
+from rest_framework import routers
 
+
+router = routers.DefaultRouter()
+router.register(r'movies', views.MovieViewSet)
+
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('signup/', views.SignUp.as_view(), name='signup'),
+    path('api/', include(router.urls)),
+    #path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
