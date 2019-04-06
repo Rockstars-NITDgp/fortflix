@@ -1,0 +1,3 @@
+[submodule "django-downloadview"]
+	path = django-downloadview
+	url = https://github.com/benoitbryon/django-downloadview
