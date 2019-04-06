@@ -38,7 +38,7 @@ class Movie(models.Model):
     )
     language = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
-    rating = models.DecimalField()
+    rating = models.DecimalField(max_digits=5,decimal_places=0)
     movie_cost = models.IntegerField()
     rewards = models.IntegerField()
     name = models.CharField(max_length=100)
@@ -52,7 +52,7 @@ class Movie(models.Model):
 class CustomUser(AbstractUser):
     name = models.CharField(max_length=30)
     mobile = models.IntegerField(validators=[MaxValueValidator(9999999999)])
-    coins = models.IntegerField(default=100)
+    coins = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
