@@ -36,6 +36,12 @@ class Movie(models.Model):
         (SPORTS, 'Sports'),
         (ACTION, 'Action'),
     )
+    BASIC = "BASIC"
+    PAID = "PAID"
+    MOVIE_TYPE = (
+        (BASIC, 'Basic'),
+        (PAID, 'Paid')
+    )
     language = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
     rating = models.DecimalField(max_digits=5,decimal_places=0)
@@ -43,11 +49,14 @@ class Movie(models.Model):
     rewards = models.IntegerField()
     name = models.CharField(max_length=100)
     genre = models.CharField(
-        max_length=5,
+        max_length=15,
         choices=MOVIE_GENRE_CHOICES,
         default=DEFAULT,
     )
     release_date = models.DateField()
+    movie_type = models.CharField(max_length=5, choices=MOVIE_TYPE, default='Paid')
+    movie_length = models.TimeField()
+    skip_intro = models.TimeField()
 
 class CustomUser(AbstractUser):
     name = models.CharField(max_length=30)
