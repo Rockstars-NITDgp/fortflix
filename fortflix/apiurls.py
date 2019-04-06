@@ -48,7 +48,7 @@ class MovieDetailedViewSet(viewsets.ModelViewSet):
 
 router = routers.DefaultRouter()
 router.register('$', MovieViewSet)
-router.register('movie/{moviename}/$', MovieDetailedViewSet)
+router.register('movie/{moviename}/$', MovieDetailedViewSet, base_name='movie')
 
 
 
