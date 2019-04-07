@@ -35,101 +35,18 @@
   
     <center><h3 style="color: red">ALL MOVIES</h3></center>
     <div class="container">
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
+      {% for movie in movies %}
+      <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
+          <img class="card-img-top" src="{{movie.poster.url}}" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <center><h4 class="card-title">{{movie.name}}</h4></center>
+            <center><button class="btn btn-danger"><a href="../../../../movie/{{movie.basename}}" style="text-decoration: none; color: #fff;">View More</a></button></center>
+          </div>
+      </div>
+      {% endfor %}
 
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
+        
 
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
-
-        <div class="card" style="width:25%; background-color: #222223; margin: 3%; padding: 1%; display: inline-block;">
-            <img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/S/sgp-catalog-images/region_GLOBAL/sphe-58CE-1DE4-34EE-826E-BD97-A_IN-Full-Image_GalleryCover-rw-RW-1507303370830._UR1920,1080_RI_SX356_FMwebp_.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <center><h4 class="card-title">Movie title</h4></center>
-              <center><button class="btn btn-danger"><a href="#" style="text-decoration: none; color: #fff;">View More</a></button></center>
-            </div>
-        </div>
 
         <center>
             <ul class="pagination">

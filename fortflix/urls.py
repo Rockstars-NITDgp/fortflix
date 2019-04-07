@@ -34,7 +34,8 @@ router.register(r'movies', views.MovieViewSet)
 urlpatterns = [
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('browse', views.browse, name='browse'),
-    path('movies_list', views.movies_list, name='movies_list'),
+    # path('movies_list', views.movies_list, name='movies_list'),
+    path('movies_list/<page>/', views.movies_list, name='movies_list'),
     path('', views.home, name='home'),
     path('stream/<str : movie>', views.default_file_view, name='default_file_view'),
     path('stream/<slug>/', views.default_file_view, name='default_file_view'),

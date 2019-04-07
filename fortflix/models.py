@@ -59,6 +59,7 @@ class Movie(models.Model):
         default=DEFAULT,
     )
     release_date = models.DateField()
+    poster = models.ImageField(upload_to="posters/", default="posters/default.jpg")
     movie_type = models.CharField(max_length=5, choices=MOVIE_TYPE, default='Paid')
     movie_length = models.TimeField()
     skip_intro = models.TimeField()

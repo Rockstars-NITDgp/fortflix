@@ -1,5 +1,6 @@
 .vscode/
 uploads/*
+posters/*
 *.pyc
 
 __pycache__/

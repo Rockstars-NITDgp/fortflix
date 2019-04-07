@@ -8,6 +8,7 @@ from rest_framework import viewsets
 from .serializers import MovieSerializer
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 # from .models.Movie import basename
 
 
@@ -44,7 +45,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 def movie_stream(request, string):
-    movie = get_object_or_404(Movie, name=string)
+    movie = get_object_or_404(Movie, basename=string)
     print(movie.name)
     print(movie.file.url)
     return render(request, 'movie.html', {'movie':movie,})
@@ -55,5 +56,13 @@ def home(request):
     else:
         return redirect('browse')
 
-def movies_list(request):
-    return render(request, 'movie-list.html', {})
+def movies_list(request, page):
+    page = int(page)
+    limit = int(Movie.objects.all().count())
+    if limit< (page*12)+1:
+        return redirect('../0')
+    ls=[]
+    for i in range(page*12+1,min((page*12)+12,limit+1)):
+        movie = Movie.objects.get(pk=i)
+        ls.append(movie)
+    return render(request, 'movie-list.html', {'movies': ls, 'page': page})
