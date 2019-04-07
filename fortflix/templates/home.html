@@ -3,12 +3,237 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a> |
-  <a href="{% url 'signup' %}">signup</a>
-{% endif %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fortflix</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  
+      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+      {% load static %}
+	    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+  
+</head>
+<body>
+  <section id="main-landing">
+    <div id="black-ov"></div>
+    <header>
+      <div id="brand">
+          <h1 class='logo-name'>FORTFLIX</h1>
+      </div>
+      <nav>
+        <a class="button" href="#" data-toggle="modal" data-target="#signIn" style="text-decoration: none; color: #fff;">Sign In</a>
+      </nav>
+    </header>
+
+    <div id="main-landing-message">
+      <h1>Let's Dwell in it!</h1>
+      <h2>Beat Challenges and earn Fortflix coins</h2>
+      <a class="button" href="#" data-toggle="modal" data-target="#signUp" style="text-decoration: none; color: #fff;">Register</a>
+    </div>
+  </section>
+
+  <section class='about-us' id="abtus">
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+                <ion-icon name="information-circle-outline" class='about-us-icon'></ion-icon>
+            </div>
+            <div class="col-sm-8" style="margin-top: 3%;">
+              <h2 >ABOUT US</h2>
+              <p style="margin-top: 2%; font-size: 120%">A Media services provider which provides movies and web-series to customers. The Primary motive of Fortflix is to provide the customers with some Fortflix Coins(Digital Money) by meeting the different challenges which help in paying the subscription fee or unlocking some paid movies.</p>
+              <p>Ut enim ad..</p>
+              <h4>What's Different?</h4>
+              <ul style="font-size: 120%">
+                <li>Many customers are not interested in paying the hefty subscription fee for every month in movie websites. They try out the trial version and leave it aside.</li>
+                <li>In Fortflix, we provide the customer a reasonably priced basic plan and a chance of earning digital money by watching the content. They earn digital money by meeting some challenges.</li>
+                <li>This Digital money is used in paying the subscription fee for next month or can unlock some paid movies.</li>
+              </ul>
+            </div>
+    </div>
+  </section>
+
+  <section class='about-us' style="background-color: #181819" id="coins-and-challenges">
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-8" style="margin-top: 3%;">
+              <h2 >Our Virtual Money</h2>
+              <h4>Fortflix Coins</h4>
+              <ul style="font-size: 120%">
+                <li>can earn digital money by meeting the challenges imposed</li>
+                <li>can buy the premium plan or can unlock the paid movies</li>
+                <li>can buy digital money by different payment methods</li>
+              </ul>
+              <h4>Challenges</h4>
+              <ul style="font-size: 120%">
+                <li>Get Fortflix coins by watching five different trailers.</li>
+                <li>Get Fortflix coins by watching 5 movies of a specified actor.</li>
+                <li>Get Fortflix coins by watching a movie completely (Not for all movies though).</li>
+                <li>Gets access to a particular paid movie and some Fortflix coins in a genre by watching 5 different movies in that genre.</li>
+                <li>User can earn referral rewards by inviting new users to Fortflix. Once the referred user makes their first subscription, both users will receive the reward.</li>
+                <li>Get Fortflix coin(s) for daily check-in mission.</li>
+                <li>Top three users who have watched the most content (measured metrics on minutes) are awarded Fortlix coins.</li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+                <ion-icon name="trophy" class='about-us-icon'></ion-icon>
+            </div>
+            
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signIn" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <p>Sign In modal</p> -->
+          <div class="container" style="margin-top:20px;">
+            
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="email">Email Address</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="password">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-9 offset-sm-3">
+                        <button type="submit" class="btn btn-danger">Login Now</button>
+                    </div>
+                </div>
+                
+            </form>
+            
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signUp" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <p>Sign Up modal</p> -->
+          <div class="container" style="margin-top:20px;">
+            
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="email">Email Address</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="password">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-9 offset-sm-3">
+                        <button type="submit" class="btn btn-danger">Login Now</button>
+                    </div>
+                </div>
+                
+            </form>
+            
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="footer-dark" style="background-color: #000">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Main Links</h3>
+                        <ul>
+                            <li><a href="#abtus">About Us</a></li>
+                            <li><a href="#coins-and-challenges">Fortflix coins and challenges</a></li>
+                            <li><a href="#main-landing">Sign In/ Sign Up</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Fortflix</h3>
+                        <p>A Media services provider which provides movies and web-series with a primary motive to provide customer with a benifits</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><ion-icon name="logo-facebook" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-linkedin" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram" class='soc'></ion-icon></a>
+                    </div>
+                </div>
+                <p class="copyright">Fortflix © 2019</p>
+            </div>
+        </footer>
+    </div>
+
+  
+</body>
+</html>
+  
+  
+
+  <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+
+
+</body>
+
+</html>
 {% endblock %}
