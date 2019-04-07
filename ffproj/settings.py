@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'fortflix',
     'rest_framework',
+    'django_downloadview',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +60,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django_downloadview.SmartDownloadMiddleware',
+
 ]
+
+# DOWNLOADVIEW_RULES = [
+#     {
+#         'source_url': 'uploads/',
+#     },
+# ]
 
 ROOT_URLCONF = 'ffproj.urls'
 
@@ -79,7 +88,10 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'home'
+# DOWNLOADVIEW_BACKEND = 'django_downloadview.nginx.XAccelRedirectMiddleware'
+
+
+LOGIN_REDIRECT_URL = 'browse'
 LOGOUT_REDIRECT_URL = 'home'
 
 WSGI_APPLICATION = 'ffproj.wsgi.application'

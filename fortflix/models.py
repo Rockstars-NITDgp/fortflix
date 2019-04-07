@@ -46,6 +46,7 @@ class Movie(models.Model):
     description = models.CharField(max_length=500)
     rating = models.DecimalField(max_digits=5,decimal_places=0)
     rating = models.FloatField()
+    file = models.FileField(upload_to='uploads/', max_length=100, default='uploads/default.jpeg')
     movie_cost = models.IntegerField()
     rewards = models.IntegerField()
     name = models.CharField(max_length=100)
@@ -58,6 +59,9 @@ class Movie(models.Model):
     movie_type = models.CharField(max_length=5, choices=MOVIE_TYPE, default='Paid')
     movie_length = models.TimeField()
     skip_intro = models.TimeField()
+    #Attributes required for serving files
+    basename = models.CharField(max_length=100, default="0")
+
 
 class CustomUser(AbstractUser):
     name = models.CharField(max_length=30)
