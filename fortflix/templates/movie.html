@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fortflix</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "css/movie-style.css" %}">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
+</head>
+
+<body>
+    <div id="playercontainer">
+    	<video id="player" src="{{movie.file.url}}"></video>
+    	<div id="controls">
+    		<div id="progressholder">
+    			<div id="buffered"></div>
+    			<div id="progress"></div>
+    			<div id="progressorb"></div>
+    		</div>
+    		<div id="playpause" class="fa fa-play"></div>
+    		<div id="progresstime">loading...</div>
+    		<div id="fullscreen" class="fa fa-arrows-alt"></div>
+    	</div>
+    </div>
+
+    <div id="movie-description">
+        <h1 style="color: red;">MOVIE NAME</h1>
+        <p><span style="color: red; font-size: 110%; margin-right: 40px;">DESCRIPTION : </span>{{movie.description}}</p>
+        <p><span style="color: red; font-size: 110%; margin-right: 80px;">GENRES : </span>{{movie.genre}}</p>
+        <p><span style="color: red; font-size: 110%; margin-right: 56px;">LANGUAGE : </span>{{movie.language}}</p>
+        <p><span style="color: red; font-size: 110%; margin-right: 90px;">RATING : </span> {{movie.rating}}/5.0</p>
+        <p><span style="color: red; font-size: 110%; margin-right: 20px;">MOVIE LENGTH : </span>{{movie.movie_length}}</p>
+        <p><span style="color: red; font-size: 110%; margin-right: 20px;">RELEASE DATE : </span>{{movie.release_date}}</p>
+        <p>By playing a video, you agree to our <a style="color: red;">Terms of Use</a></p>
+    </div>
+
+    <div id="recommenations-block">
+        <center><h1 style="color: red;">VIDEOS YOU MAY LIKE</h1></center>
+
+        <div class="card" style="width: 30rem; background-color: #313335; color: #fff; display: inline-block; margin: 1%">
+          <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt="Card image cap" style="width: 100%; height: auto;">
+          <div class="card-body">
+            <center><h4>MOVIE NAME</h4></center>
+            <center><button class="btn btn-danger">View More</button></center>
+          </div>
+        </div>
+
+        <div class="card" style="width: 30rem; background-color: #313335; color: #fff; display: inline-block; margin: 1%">
+          <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt="Card image cap" style="width: 100%; height: auto;">
+          <div class="card-body">
+            <center><h4>MOVIE NAME</h4></center>
+            <center><button class="btn btn-danger">View More</button></center>
+          </div>
+        </div>
+
+        <div class="card" style="width: 30rem; background-color: #313335; color: #fff; display: inline-block; margin: 1%">
+          <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt="Card image cap" style="width: 100%; height: auto;">
+          <div class="card-body">
+            <center><h4>MOVIE NAME</h4></center>
+            <center><button class="btn btn-danger">View More</button></center>
+          </div>
+        </div>
+
+        <div class="card" style="width: 30rem; background-color: #313335; color: #fff; display: inline-block; margin: 1%">
+          <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt="Card image cap" style="width: 100%; height: auto;">
+          <div class="card-body">
+            <center><h4>MOVIE NAME</h4></center>
+            <center><button class="btn btn-danger">View More</button></center>
+          </div>
+        </div>
+
+        <div class="card" style="width: 30rem; background-color: #313335; color: #fff; display: inline-block; margin: 1%">
+          <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt="Card image cap" style="width: 100%; height: auto;">
+          <div class="card-body">
+            <center><h4>MOVIE NAME</h4></center>
+            <center><button class="btn btn-danger">View More</button></center>
+          </div>
+        </div>
+
+
+
+
+
+        
+
+
+
+    </div>
+
+
+    <div class="footer-dark" style="background-color: #000">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Main Links</h3>
+                        <ul>
+                            <li><a href="#abtus">About Us</a></li>
+                            <li><a href="#coins-and-challenges">Fortflix coins and challenges</a></li>
+                            <li><a href="#main-landing">Sign In/ Sign Up</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Fortflix</h3>
+                        <p>A Media services provider which provides movies and web-series with a primary motive to provide customer with a benifits</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><ion-icon name="logo-facebook" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-linkedin" class='soc'></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram" class='soc'></ion-icon></a>
+                    </div>
+                </div>
+                <p class="copyright">Fortflix © 2019</p>
+            </div>
+        </footer>
+    </div>
+    
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{% static 'js/movie-index.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+
+
+
+</body>
+
+</html>

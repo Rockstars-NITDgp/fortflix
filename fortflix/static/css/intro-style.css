@@ -1,0 +1,16 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+#slide-img{
+    width: 100%;
+    height: auto;
+}
+
+#nav-titles{
+    margin-top: 10px;
+    margin-bottom: -20px;
+    color: red;
+    font-size: 120%;
+}

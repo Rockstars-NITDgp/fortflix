@@ -32,10 +32,14 @@ router.register(r'movies', views.MovieViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    #path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('browse', views.browse, name='browse'),
+    path('movies_list', views.movies_list, name='movies_list'),
+    path('', views.home, name='home'),
     path('stream/<str : movie>', views.default_file_view, name='default_file_view'),
     path('signup/', views.SignUp.as_view(), name='signup'),
+    # url(r'^logout/$', 'django.contrib.auth.views.logout',{'next_page': '/home/'}, name='logout'),
     path('api/', include(router.urls)),
+    url(r'^movie/(?P<string>[ \w\-]+)/$', views.movie_stream, name='movie_stream')
     #path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

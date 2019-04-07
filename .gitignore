@@ -3,7 +3,7 @@
 *.pyc
 
 __pycache__/
-
+uploads/*
 venv/*
 fortflix/migrations/*
 db.sqlite3
