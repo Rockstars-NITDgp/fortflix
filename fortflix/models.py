@@ -1,7 +1,6 @@
 from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.
 
 # Create your models here.
 class Movie(models.Model):
@@ -66,7 +65,6 @@ class Movie(models.Model):
 
 class CustomUser(AbstractUser):
     name = models.CharField(max_length=30)
-    @
     mobile = models.IntegerField(validators=[MaxValueValidator(9999999999)], null=True)
     coins = models.IntegerField(default=0)
 
