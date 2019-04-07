@@ -37,6 +37,7 @@ urlpatterns = [
     path('movies_list', views.movies_list, name='movies_list'),
     path('', views.home, name='home'),
     path('stream/<str : movie>', views.default_file_view, name='default_file_view'),
+    path('stream/<slug>/', views.default_file_view, name='default_file_view'),
     path('signup/', views.SignUp.as_view(), name='signup'),
     # url(r'^logout/$', 'django.contrib.auth.views.logout',{'next_page': '/home/'}, name='logout'),
     path('api/', include(router.urls)),
