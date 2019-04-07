@@ -1,6 +1,8 @@
 from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 # Create your models here.
 class Movie(models.Model):
@@ -44,8 +46,9 @@ class Movie(models.Model):
     )
     language = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
-    rating = models.DecimalField(max_digits=5,decimal_places=0)
-    rating = models.FloatField()
+    rating = models.FloatField(
+        validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
+    )
     file = models.FileField(upload_to='uploads/', max_length=100, default='uploads/default.jpeg')
     movie_cost = models.IntegerField()
     rewards = models.IntegerField()
@@ -61,6 +64,7 @@ class Movie(models.Model):
     skip_intro = models.TimeField()
     #Attributes required for serving files
     basename = models.CharField(max_length=100, default="0")
+    slug = models.SlugField(max_length=50, default="none")
 
 
 class CustomUser(AbstractUser):

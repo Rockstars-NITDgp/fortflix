@@ -34,7 +34,7 @@ router.register(r'movies', views.MovieViewSet)
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('browse', views.browse, name='browse'),
-    path('stream/<str : movie>', views.default_file_view, name='default_file_view'),
+    path('stream/<slug>/', views.default_file_view, name='default_file_view'),
     path('signup/', views.SignUp.as_view(), name='signup'),
     path('api/', include(router.urls)),
     #path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
